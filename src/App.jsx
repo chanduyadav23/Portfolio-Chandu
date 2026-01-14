@@ -615,6 +615,13 @@ section {
   color: var(--text-main);
   font-weight: 700;
 }
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
 
 .exp-date {
   color: var(--primary);
@@ -1005,10 +1012,14 @@ const About = () => {
             </div>
           </div>
           
-          <div className="profile-card">
-            <div className="profile-img-placeholder">
-              <User size={120} color="rgba(255,255,255,0.1)" />
-            </div>
+  <div className="profile-card">
+  <div className="profile-img-placeholder">
+    <img
+      src="/profile.jpg"
+      alt="Chandu Yadav"
+      className="profile-img"
+    />
+  </div>
           </div>
         </div>
       </div>
