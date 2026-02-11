@@ -795,7 +795,7 @@ const DATA = {
   name: "Chandu Yadav",
   role: "Full Stack Developer",
   email: "chanduy421@gmail.com",
-  phone: "+91 9011402723",
+  phone: "+91 9011402723", 
   location: "Mumbai, India",
   github: "https://github.com/chanduyadav23",
   linkedin: "https://www.linkedin.com/in/chanduyadavvv23/",
@@ -885,7 +885,7 @@ const Navbar = () => {
                 {item.name}
               </a>
             ))}
-            <a href="/resume.pdf" download className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '0.9rem'}}>
+            <a href="/Chandu Yadav.pdf" download className="btn btn-secondary" style={{padding: '8px 16px', fontSize: '0.9rem'}}>
               Resume <Download size={14} style={{marginLeft: '5px'}}/>
             </a>
           </nav>
@@ -1124,7 +1124,7 @@ const Experience = () => {
            </ul>
            
            <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-             <a href="/resume.pdf" download className="btn btn-secondary">
+             <a href="/Chandu Yadav.pdf" download className="btn btn-secondary">
                <Download size={18} style={{marginRight: '8px'}} /> Download Full Resume
              </a>
            </div>
