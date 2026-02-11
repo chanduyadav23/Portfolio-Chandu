@@ -1138,14 +1138,30 @@ const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    setTimeout(() => {
-      setStatus('sent');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setStatus(null), 3000);
-    }, 1500);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mvzpazzn", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('sent');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus(null), 3000);
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -1160,21 +1176,6 @@ const Contact = () => {
         </div>
 
         <div className="contact-wrapper">
-          <div className="contact-info-grid">
-             <div className="contact-mini-item">
-                <MapPin size={24} style={{marginBottom: '10px', color: 'var(--primary)'}} />
-                <div>{DATA.location}</div>
-             </div>
-             <div className="contact-mini-item">
-                <Mail size={24} style={{marginBottom: '10px', color: 'var(--primary)'}} />
-                <div>{DATA.email}</div>
-             </div>
-             <div className="contact-mini-item">
-                <Phone size={24} style={{marginBottom: '10px', color: 'var(--primary)'}} />
-                <div>{DATA.phone}</div>
-             </div>
-          </div>
-
           <div className="contact-card">
             <form onSubmit={handleSubmit}>
               <div className="form-row">
@@ -1189,6 +1190,7 @@ const Contact = () => {
                     placeholder="John Doe"
                   />
                 </div>
+
                 <div className="form-group">
                   <label className="form-label">Email</label>
                   <input 
@@ -1201,6 +1203,7 @@ const Contact = () => {
                   />
                 </div>
               </div>
+
               <div className="form-group">
                 <label className="form-label">Message</label>
                 <textarea 
@@ -1212,29 +1215,27 @@ const Contact = () => {
                   placeholder="Hello, I'd like to talk about..."
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary" style={{ width: '100%' }} disabled={status === 'sending'}>
-                {status === 'sending' ? 'Sending...' : status === 'sent' ? 'Message Sent!' : 'Send Message'} 
-                {status !== 'sending' && <Send size={18} style={{marginLeft: '8px'}}/>}
+
+              <button 
+                type="submit" 
+                className="btn btn-primary" 
+                style={{ width: '100%' }} 
+                disabled={status === 'sending'}
+              >
+                {status === 'sending'
+                  ? 'Sending...'
+                  : status === 'sent'
+                  ? 'Message Sent!'
+                  : 'Send Message'}
               </button>
             </form>
-          </div>
-
-          <div className="social-bar">
-            <a href={DATA.github} target="_blank" rel="noopener noreferrer" className="social-item">
-              <Github size={20} />
-            </a>
-            <a href={DATA.linkedin} target="_blank" rel="noopener noreferrer" className="social-item">
-              <Linkedin size={20} />
-            </a>
-            <a href={`mailto:${DATA.email}`} className="social-item">
-              <Mail size={20} />
-            </a>
           </div>
         </div>
       </div>
     </section>
   );
 };
+
 
 const Footer = () => {
   return (
