@@ -1171,7 +1171,7 @@ const Contact = () => {
            <p style={{color: 'var(--primary)', marginBottom: '1rem', fontWeight: 600}}>05. What's Next?</p>
            <h2 style={{justifyContent: 'center', fontSize: '3rem'}}>Get In Touch</h2>
            <p style={{maxWidth: '600px', margin: '0 auto', color: 'var(--text-muted)'}}>
-             I am currently looking for full-time opportunities. Whether you have a question about my stack or just want to say hi, my inbox is always open!
+             I am currently working as a Web Development Intern and gaining hands-on experience with real-world projects. However, I am open to better full-time opportunities where I can grow, contribute, and build impactful products. Whether you have a question about my stack or just want to say hi, my inbox is always open!
            </p>
         </div>
 
