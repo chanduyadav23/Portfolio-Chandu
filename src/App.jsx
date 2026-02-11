@@ -798,7 +798,7 @@ const DATA = {
   phone: "+91 9011402723",
   location: "Mumbai, India",
   github: "https://github.com/chanduyadav23",
-  linkedin: "https://linkedin.com/in/chandu-yadav",
+  linkedin: "https://www.linkedin.com/in/chanduyadavvv23/",
   about: "I am an entry-level Full Stack Developer with a strong foundation in Python, Django, and MySQL, alongside modern frontend expertise in React.js and Bootstrap. Passionate about problem-solving and building scalable web applications, I have hands-on experience from real-world internships and academic projects.",
   skills: [
     {
