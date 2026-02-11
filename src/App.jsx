@@ -794,7 +794,7 @@ footer {
 const DATA = {
   name: "Chandu Yadav",
   role: "Full Stack Developer",
-  email: "chanduyadav23@gmail.com",
+  email: "chanduy421@gmail.com",
   phone: "+91 9011402723",
   location: "Mumbai, India",
   github: "https://github.com/chanduyadav23",
